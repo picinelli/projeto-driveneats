@@ -58,7 +58,6 @@ section {
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
-    overflow: hidden;
 }
 .box-item {
     width: 172px;
@@ -116,13 +115,17 @@ footer {
     justify-content: center;
     box-shadow: 0px 0px 1px gray;
 }
+footer > a {
+    all: unset;
+}
 .fundocinza {
     background-color: #CBCBCB;
     border-radius: 50px;
     width: 364px;
     height: 61px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     text-align: center;
     justify-content: center;
 }
@@ -132,5 +135,8 @@ footer {
     font-weight: normal;
     font-size: 20px;
     color: #FFFFFF;
-    width: 364px;
+    width: 220px;
+}
+.cor-selecionado {
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
 }
