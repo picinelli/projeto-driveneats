@@ -68,7 +68,7 @@ function botaoFinalizar() {
         const alimento1 = document.querySelector('.prato1');
         nomeConfirma1.innerHTML = alimento1.innerHTML
         pratoZap = alimento1.innerHTML
-        precoConfirma1.innerHTML = precoSelecionado.innerHTML
+        precoConfirma1.innerHTML = precoSelecionado.innerHTML.replace(/^R\$ +/, '')
         totalComida = Number(parseFloat(`${precoSelecionado.innerHTML}`.replace(/[^0-9,]*/g, '').replace(',', '.')).toFixed(2));
     } else if (opcao2.classList.contains('cor-selecionado')) {
         const nomeConfirma1 = document.querySelector('.nome-confirma1');
@@ -77,7 +77,7 @@ function botaoFinalizar() {
         const alimento2 = document.querySelector('.prato2');
         nomeConfirma1.innerHTML = alimento2.innerHTML;
         pratoZap = alimento2.innerHTML
-        precoConfirma1.innerHTML = precoSelecionado.innerHTML;
+        precoConfirma1.innerHTML = precoSelecionado.innerHTML.replace(/^R\$ +/, '');
         totalComida = Number(parseFloat(`${precoSelecionado.innerHTML}`.replace(/[^0-9,]*/g, '').replace(',', '.')).toFixed(2));
     } else if (opcao3.classList.contains('cor-selecionado')){
         const nomeConfirma1 = document.querySelector('.nome-confirma1');
@@ -86,7 +86,7 @@ function botaoFinalizar() {
         const alimento3 = document.querySelector('.prato3');
         nomeConfirma1.innerHTML = alimento3.innerHTML;
         pratoZap = alimento3.innerHTML
-        precoConfirma1.innerHTML = precoSelecionado.innerHTML;
+        precoConfirma1.innerHTML = precoSelecionado.innerHTML.replace(/^R\$ +/, '');
         totalComida = Number(parseFloat(`${precoSelecionado.innerHTML}`.replace(/[^0-9,]*/g, '').replace(',', '.')).toFixed(2));
     }
     if (opcao4.classList.contains('cor-selecionado')) {
@@ -96,7 +96,7 @@ function botaoFinalizar() {
         const bebida1 = document.querySelector('.bebidaTexto1');
         nomeConfirma2.innerHTML = bebida1.innerHTML;
         bebidaZap = bebida1.innerHTML
-        precoConfirma2.innerHTML = precoSelecionado.innerHTML
+        precoConfirma2.innerHTML = precoSelecionado.innerHTML.replace(/^R\$ +/, '')
         totalBebida = Number(parseFloat(`${precoSelecionado.innerHTML}`.replace(/[^0-9,]*/g, '').replace(',', '.')).toFixed(2));
     } else if (opcao5.classList.contains('cor-selecionado')) {
         const nomeConfirma2 = document.querySelector('.nome-confirma2');
@@ -105,7 +105,7 @@ function botaoFinalizar() {
         const bebida2 = document.querySelector('.bebidaTexto2');
         nomeConfirma2.innerHTML = bebida2.innerHTML;
         bebidaZap = bebida2.innerHTML
-        precoConfirma2.innerHTML = precoSelecionado.innerHTML;
+        precoConfirma2.innerHTML = precoSelecionado.innerHTML.replace(/^R\$ +/, '');
         totalBebida = Number(parseFloat(`${precoSelecionado.innerHTML}`.replace(/[^0-9,]*/g, '').replace(',', '.')).toFixed(2));
     } else if (opcao6.classList.contains('cor-selecionado')){
         const nomeConfirma2 = document.querySelector('.nome-confirma2');
@@ -114,7 +114,7 @@ function botaoFinalizar() {
         const bebida3 = document.querySelector('.bebidaTexto3');
         nomeConfirma2.innerHTML = bebida3.innerHTML;
         bebidaZap = bebida3.innerHTML
-        precoConfirma2.innerHTML = precoSelecionado.innerHTML;
+        precoConfirma2.innerHTML = precoSelecionado.innerHTML.replace(/^R\$ +/, '');
         totalBebida = Number(parseFloat(`${precoSelecionado.innerHTML}`.replace(/[^0-9,]*/g, '').replace(',', '.')).toFixed(2));
     }
     if (opcao7.classList.contains('cor-selecionado')) {
@@ -124,7 +124,7 @@ function botaoFinalizar() {
         const sobremesa1 = document.querySelector('.sobremesaTexto1');
         nomeConfirma3.innerHTML = sobremesa1.innerHTML;
         sobremesaZap = sobremesa1.innerHTML
-        precoConfirma3.innerHTML = precoSelecionado.innerHTML;
+        precoConfirma3.innerHTML = precoSelecionado.innerHTML.replace(/^R\$ +/, '');
         totalSobremesa = Number(parseFloat(`${precoSelecionado.innerHTML}`.replace(/[^0-9,]*/g, '').replace(',', '.')).toFixed(2));
     } else if (opcao8.classList.contains('cor-selecionado')) {
         const nomeConfirma3 = document.querySelector('.nome-confirma3');
@@ -133,7 +133,7 @@ function botaoFinalizar() {
         const sobremesa2 = document.querySelector('.sobremesaTexto2');
         nomeConfirma3.innerHTML = sobremesa2.innerHTML;
         sobremesaZap = sobremesa2.innerHTML
-        precoConfirma3.innerHTML = precoSelecionado.innerHTML;
+        precoConfirma3.innerHTML = precoSelecionado.innerHTML.replace(/^R\$ +/, '');
         totalSobremesa = Number(parseFloat(`${precoSelecionado.innerHTML}`.replace(/[^0-9,]*/g, '').replace(',', '.')).toFixed(2));
     } else if (opcao9.classList.contains('cor-selecionado')){
         const nomeConfirma3 = document.querySelector('.nome-confirma3');
@@ -142,7 +142,7 @@ function botaoFinalizar() {
         const sobremesa3 = document.querySelector('.sobremesaTexto3');
         nomeConfirma3.innerHTML = sobremesa3.innerHTML;
         sobremesaZap = sobremesa3.innerHTML
-        precoConfirma3.innerHTML = precoSelecionado.innerHTML;
+        precoConfirma3.innerHTML = precoSelecionado.innerHTML.replace(/^R\$ +/, '');
         totalSobremesa = Number(parseFloat(`${precoSelecionado.innerHTML}`.replace(/[^0-9,]*/g, '').replace(',', '.')).toFixed(2));
     }
 }
@@ -174,7 +174,7 @@ function cancelarConfirmacao() {
 }
 function linkDoZap() {
     const linkZap = document.querySelector('.linkZap')
-    let mensagem = `Olá, meu nome é ${nomePergunta}! gostaria de fazer o pedido:\n- Prato: ${pratoZap}\n- Bebida: ${bebidaZap}\n- Sobremesa: ${sobremesaZap}\nTotal: R$ ${totalSoma}\n\n no endereço ${nomeEndereco}`
-    linkZap.setAttribute("href", `https://wa.me/5512997125935?text=${encodeURIComponent(mensagem)}`);
+    let mensagem = `Olá, meu nome é ${nomePergunta}! Gostaria de fazer o pedido:\n- Prato: ${pratoZap}\n- Bebida: ${bebidaZap}\n- Sobremesa: ${sobremesaZap}\nTotal: R$ ${totalSoma}\n\n no endereço: ${nomeEndereco}`
+    linkZap.setAttribute("href", `https://wa.me/?text=${encodeURIComponent(mensagem)}`);
     linkZap.setAttribute('target', '__blank')
 }
