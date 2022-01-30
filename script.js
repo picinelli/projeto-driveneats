@@ -172,4 +172,9 @@ function cancelarConfirmacao() {
     pe.classList.remove('opacidade')
     caixaConfirmacao.classList.add('esconder')
 }
-
+function linkDoZap() {
+    const linkZap = document.querySelector('.linkZap')
+    let mensagem = `Olá, meu nome é ${nomePergunta}! gostaria de fazer o pedido:\n- Prato: ${pratoZap}\n- Bebida: ${bebidaZap}\n- Sobremesa: ${sobremesaZap}\nTotal: R$ ${totalSoma}\n\n no endereço ${nomeEndereco}`
+    linkZap.setAttribute("href", `https://wa.me/5512997125935?text=${encodeURIComponent(mensagem)}`);
+    linkZap.setAttribute('target', '__blank')
+}
