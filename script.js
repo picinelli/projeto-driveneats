@@ -18,6 +18,9 @@
     let nomeEndereco
 // Funcao para deixar borda verde dos pratos principais
 function selecionado1(prato) {
+    const marcado1 = document.querySelector('.marcado1');
+    const marcado2 = document.querySelector('.marcado2');
+    const marcado3 = document.querySelector('.marcado3');
     if (opcao1.classList.contains('cor-selecionado') || opcao2.classList.contains('cor-selecionado') || opcao3.classList.contains('cor-selecionado')) {
         opcao1.classList.remove('cor-selecionado');
         opcao2.classList.remove('cor-selecionado');
@@ -26,10 +29,30 @@ function selecionado1(prato) {
     } else {
         prato.classList.add('cor-selecionado');
     }
+
+    if (opcao1.classList.contains('cor-selecionado')) {
+        marcado2.classList.add('esconder')
+        marcado3.classList.add('esconder')
+        marcado1.classList.remove('esconder')
+    }
+    if (opcao2.classList.contains('cor-selecionado')) {
+        marcado3.classList.add('esconder')
+        marcado1.classList.add('esconder')
+        marcado2.classList.remove('esconder')
+    }
+    if (opcao3.classList.contains('cor-selecionado')) {
+        marcado2.classList.add('esconder')
+        marcado1.classList.add('esconder')
+        marcado3.classList.remove('esconder')
+    }
+
     botaoFinalizar()
 }
 // Funcao para deixar borda verde das bebidas
 function selecionado2(bebida) {
+    const marcado4 = document.querySelector('.marcado4');
+    const marcado5 = document.querySelector('.marcado5');
+    const marcado6 = document.querySelector('.marcado6');
     if (opcao4.classList.contains('cor-selecionado') || opcao5.classList.contains('cor-selecionado') || opcao6.classList.contains('cor-selecionado')) {
         opcao4.classList.remove('cor-selecionado');
         opcao5.classList.remove('cor-selecionado');
@@ -39,9 +62,28 @@ function selecionado2(bebida) {
         bebida.classList.add('cor-selecionado');
     }
     botaoFinalizar()
+
+    if (opcao4.classList.contains('cor-selecionado')) {
+        marcado6.classList.add('esconder')
+        marcado5.classList.add('esconder')
+        marcado4.classList.remove('esconder')
+    }
+    if (opcao5.classList.contains('cor-selecionado')) {
+        marcado6.classList.add('esconder')
+        marcado4.classList.add('esconder')
+        marcado5.classList.remove('esconder')
+    }
+    if (opcao6.classList.contains('cor-selecionado')) {
+        marcado4.classList.add('esconder')
+        marcado5.classList.add('esconder')
+        marcado6.classList.remove('esconder')
+    }
 }
 // Funcao para deixar borda verde das sobremesas
 function selecionado3(sobremesa) {
+    const marcado7 = document.querySelector('.marcado7');
+    const marcado8 = document.querySelector('.marcado8');
+    const marcado9 = document.querySelector('.marcado9');
     if (opcao7.classList.contains('cor-selecionado') || opcao8.classList.contains('cor-selecionado') || opcao9.classList.contains('cor-selecionado')) {
         opcao7.classList.remove('cor-selecionado');
         opcao8.classList.remove('cor-selecionado');
@@ -51,6 +93,22 @@ function selecionado3(sobremesa) {
         sobremesa.classList.add('cor-selecionado');
     }
     botaoFinalizar()
+    
+    if (opcao7.classList.contains('cor-selecionado')) {
+        marcado8.classList.add('esconder')
+        marcado9.classList.add('esconder')
+        marcado7.classList.remove('esconder')
+    }
+    if (opcao8.classList.contains('cor-selecionado')) {
+        marcado7.classList.add('esconder')
+        marcado9.classList.add('esconder')
+        marcado8.classList.remove('esconder')
+    }
+    if (opcao9.classList.contains('cor-selecionado')) {
+        marcado7.classList.add('esconder')
+        marcado8.classList.add('esconder')
+        marcado9.classList.remove('esconder')
+    }
 }
 // Funcao para liberar o botao de finalizar
 function botaoFinalizar() {
@@ -174,7 +232,7 @@ function cancelarConfirmacao() {
 }
 function linkDoZap() {
     const linkZap = document.querySelector('.linkZap')
-    let mensagem = `Olá, meu nome é ${nomePergunta}! Gostaria de fazer o pedido:\n- Prato: ${pratoZap}\n- Bebida: ${bebidaZap}\n- Sobremesa: ${sobremesaZap}\nTotal: R$ ${totalSoma}\n\n no endereço: ${nomeEndereco}`
+    let mensagem = `Olá, meu nome é ${nomePergunta}! Gostaria de fazer o pedido:\n- Prato: ${pratoZap}\n- Bebida: ${bebidaZap}\n- Sobremesa: ${sobremesaZap}\nTotal: R$ ${totalSoma}\n\n para o endereço: ${nomeEndereco}`
     linkZap.setAttribute("href", `https://wa.me/?text=${encodeURIComponent(mensagem)}`);
     linkZap.setAttribute('target', '__blank')
 }
