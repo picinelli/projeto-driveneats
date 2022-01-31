@@ -1,7 +1,7 @@
 header {
     background-color: #CF2B2B;
     height: 92px;
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,14 +18,14 @@ header > h1 {
     font-size: 44px;
     color: #FFFFFF;
     margin-left: 21px;
-    width: 100%;
+    width: 414px;
 }
 header > p {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: #FFFFFF;
     margin-left: 21px;
-    width: 100%;
+    width: 414px;
 }
 /* Conteudo */
 body {
@@ -103,7 +103,7 @@ section {
     margin-top: 12px;
 }
 footer {
-    width: 100%;
+    width: 100vw;
     height: 92px;
     background: #FFFFFF;
     position: fixed;
@@ -140,11 +140,10 @@ footer > a {
 }
 .caixa-confirmacao {
     flex-wrap: wrap;
-    width: 333px;
+    width: 80vw;
     height: 310px;
     position: fixed;
     bottom: 300px;
-    left: 60px;
     background-color: #50D074;
     border-radius: 25px;
     box-shadow: 5px 5px 45px gray;
