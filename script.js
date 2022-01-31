@@ -232,7 +232,7 @@ function cancelarConfirmacao() {
 }
 function linkDoZap() {
     const linkZap = document.querySelector('.linkZap')
-    let mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${pratoZap}\n- Bebida: ${bebidaZap}\n- Sobremesa: ${sobremesaZap}\nTotal: R$ ${totalSoma}\n\n Nome: ${nomePergunta}\nEndereço: ${nomeEndereco}`
+    let mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${pratoZap}\n- Bebida: ${bebidaZap}\n- Sobremesa: ${sobremesaZap}\nTotal: R$ ${totalSoma}\n\nNome: ${nomePergunta}\nEndereço: ${nomeEndereco}`
     linkZap.setAttribute("href", `https://wa.me/?text=${encodeURIComponent(mensagem)}`);
     linkZap.setAttribute('target', '__blank')
 }
