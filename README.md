@@ -10,7 +10,7 @@
   <p align="center">
     Projeto de um site mobile para pedidos delivery!
     <br />
-    <a href="https://github.com/picinelli/projeto-driveneats/blob/main/script.js"><strong>JS code»</strong></a>
+    <a href="https://github.com/picinelli/projeto-driveneats/blob/main/script.js"><strong>Código JS»</strong></a>
 </div>
 
 <!-- ABOUT THE PROJECT -->
